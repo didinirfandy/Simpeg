@@ -412,7 +412,7 @@ class tabel_cv extends CI_Controller
 
         $pdf->Output();
         $filename = $_SERVER['DOCUMENT_ROOT'].'/aptk/assets_application/assets/PrintOUT/karyawan'.$nama.' '.$npp.' '.$date.'.pdf';
-
+        
 
         $pdf->Output($filename,'F');
         
