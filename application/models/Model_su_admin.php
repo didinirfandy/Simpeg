@@ -15,9 +15,9 @@
                 'alamat' 	=> 	$alamat,
                 'tlp' 		=> 	$tlp,
                 'email' 	=> 	$email,
-			    'username' 	=> 	$username,
-			    'pass' 		=> 	$md5,
-			    'valid' 	=> 	1
+				'username' 	=> 	$username,
+				'pass' 		=> 	$md5,
+				'valid' 	=> 	1
 			);
 
         $this->db->insert('login_admin', $data);
@@ -28,12 +28,12 @@
 
     function delete($id,$valid)
 	{
-		if($valid==1)
+		if($valid == 1)
 		{
 			$data	=	array(
-	            'valid' 	=> 	0,
-	            'status'	=>	0
-	            );
+				'valid' 	=> 	0,
+				'status'	=>	0
+				);
 
 			$this->db->where('id', $id);
 			$this->db->update('login_admin',$data);
@@ -43,8 +43,8 @@
 		else
 		{
 			$data 	= 	array(
-            	'valid' 	=> 	1,
-            	'status' 	=> 	0
+				'valid' 	=> 	1,
+				'status' 	=> 	0
                 );
 
 			$this->db->where('id', $id);
@@ -64,15 +64,14 @@
         	);
 
 		$this->db->where('username', $username);
-		$this->db->update('t_login',$data);
+		$this->db->update('login_admin',$data);
 
 		return 1;
 	}
 
-    function tampil_ptg($db,$level)
+    function tampil_ptg($level)
 	{
-		return $this->db->query("SELECT * FROM tb_login where level ='$level'");
+		return $this->db->query("SELECT * FROM login_karyawan where level ='$level'");
 
 	}
 }
-?>

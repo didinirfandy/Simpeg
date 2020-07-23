@@ -9,14 +9,17 @@ else{
 <html lang="en">
     <head>
 
-        <?php $this->load->view('template/head') ?>
+        <?php
+            $data['tittle'] = "Biodata Diri";
+            $this->load->view('template/head', $data);
+        ?>
 
     </head>
     <body class="app sidebar-mini rtl" id="simpan">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>index.php/welcome/in_admin">PTPN VIII</a>
+    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>index.php/Admin/in_admin">SIMPEG</a>
         
-        <?php $this->load->view('template/header') ?>
+        <?php $this->load->view('template/header_ad') ?>
     
     </header>
     <!-- Sidebar menu-->
@@ -27,102 +30,104 @@ else{
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list"></i> SDM 01</h1>
-                <p></p>
+                <h1><i class="fa fa-user-circle"></i> Biodata Diri</h1>
+                <p>Menampilkan Biodata Diri Karyawan</p>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
                 <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-                <li class="breadcrumb-item">Tabel SDM</li>
-                <li class="breadcrumb-item active"><a href="<?php echo base_url() ?>index.php/admin/tabel_sdm/sdm01"> SDM 01</a></li>
+                <li class="breadcrumb-item">Tabel Kepegawaian</li>
+                <li class="breadcrumb-item active"><a href="<?php echo base_url() ?>index.php/admin/tabel_sdm/sdm01"> Diri Biodata Diri</a></li>
             </ul>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
                     <div class="tile-title-w-btn">
-                        <h4 class="title">Menampilkan Data Karyawan</h4>
-                        <?php echo $this->session->userdata("status_insert") ?>
-                        <button type="button" class="btn btn-primary icon-btn" data-toggle="modal" data-target="#ModalAdd"><i class="fa fa-plus"></i>Add Item </button>
+                        <h4 class="title">Biodata Diri Karyawan</h4>
+                        <div class="form-group mx-sm-5 col-md-5 ">
+                        </div>
+                            <a class="btn btn-info icon-btn" title="Add Item" href="<?php echo base_url() ?>index.php/admin/tabel_sdm/inpt_sdm01"><i class="fa fa-plus" hre></i>Add Item </a>&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-info icon-btn" title="Carak A1" href="<?php echo base_url() ?>index.php/ExcelA1/export"><i class="fa fa-print"></i> Cetak A1 </a>
                     </div>
                     <hr align="right" color="black" >
                         <div class="row">
                             <div class="col-lg-4 offset-lg-1">
                                 <div class="form-group">
                                     <label class="control-label"></label>
-                                    <input class="form-control" type="text" id="npp" name="npp" placeholder=" Masukan NPP....." required><small class="form-text text-muted" id="emailHelp">Masukkan NPP yang akan anda cari</small>
+                                    <input class="form-control" type="text" id="npp" name="npp" title="Masukan NPP....." placeholder=" Masukan NPP....." required><small class="form-text text-muted" id="emailHelp">Masukkan NPP yang akan anda cari</small>
                                 </div>
                                 <hr align="right" color="black" >
                                 <div class="form-group">
                                     <label class="control-label">NPP</label>
-                                    <input class="form-control" type="text" name="npp" placeholder="NPP....." readonly>
+                                    <input class="form-control" type="text" name="npp" placeholder="Data Not Exists" readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Nama Lengkap</label>
-                                    <input class="form-control" type="text" name="nama" placeholder=" Nama Lengkap....." readonly>
+                                    <input class="form-control" type="text" name="nama" placeholder=" Data Not Exists" readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Nama Panggilan</label>
-                                    <input class="form-control" type="text" name="nm_pgl" placeholder=" Nama Panggilan..... " readonly>
+                                    <input class="form-control" type="text" name="nm_pgl" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Gelar Depan Anda</label>
-                                    <input class="form-control" type="text"  name="glr_dpn" placeholder=" Gelar Depan..... " readonly>
+                                    <input class="form-control" type="text"  name="glr_dpn" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Gelar Belakang Anda</label>
-                                    <input class="form-control" type="text"  name="glr_blk" placeholder=" Gelar Belakang..... " readonly>
+                                    <input class="form-control" type="text"  name="glr_blk" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Kota Lahir</label>
-                                    <input class="form-control" type="text"  name="kota_lhr" placeholder=" Kota Lahir..... "  readonly>
+                                    <input class="form-control" type="text"  name="kota_lhr" placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Provinsi Lahir</label>
-                                    <input class="form-control" type="text"  name="prov_lhr" placeholder=" Provinsi Lahir..... "  readonly>
+                                    <input class="form-control" type="text"  name="prov_lhr" placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Negara Lahir</label>
-                                    <input class="form-control" type="text"  name="ngr_lhr" placeholder=" Negara Lahir..... " readonly>
+                                    <input class="form-control" type="text"  name="ngr_lhr" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Tanggal Lahir</label>
-                                    <input class="form-control" type="date" name="tgl_lhr"  placeholder=" Tanggal Lahir..... " readonly>
+                                    <input class="form-control" type="date" name="tgl_lhr"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Jenis Kelamin</label>
-                                    <input class="form-control" type="text"  name="j_kelamin" placeholder=" Jenis Kelamin..... " readonly>
+                                    <input class="form-control" type="text"  name="j_kelamin" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Golongan Darah</label>
-                                    <input class="form-control" type="text"  name="gol_darah" placeholder=" Golongan Darah..... " readonly>
+                                    <input class="form-control" type="text"  name="gol_darah" placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Agama</label>
-                                    <input class="form-control" type="text" name="agama"  placeholder=" Agama..... " readonly>
+                                    <input class="form-control" type="text" name="agama"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Tanggal Masuk</label>
-                                    <input class="form-control" type="date"  name="tgl_masuk" placeholder=" Tanggal Masuk..... "  readonly>
+                                    <input class="form-control" type="date"  name="tgl_masuk" placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Status Sipil</label>
-                                    <input class="form-control" type="text"  name="st_sipil" placeholder=" Status Sipil..... "  readonly>
+                                    <input class="form-control" type="text"  name="st_sipil" placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Jumlah Anak</label>
-                                    <input class="form-control" type="text" name="jmlh_ank"  placeholder=" Jumlah Anak..... "  readonly>
+                                    <input class="form-control" type="text" name="jmlh_ank"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No Astek</label>
-                                    <input class="form-control" type="text" name="no_astek"  placeholder=" No Astek..... "   readonly>
+                                    <input class="form-control" type="text" name="no_astek"  placeholder=" Data Not Exists "   readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No Pens</label>
-                                    <input class="form-control" type="text" name="no_pens"  placeholder=" No Pens..... "  readonly>
+                                    <input class="form-control" type="text" name="no_pens"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No NPWP</label>
-                                    <input class="form-control" type="text" name="npwp"  placeholder=" No NPWP..... "  readonly>
+                                    <input class="form-control" type="text" name="npwp"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                             </div>
                             
@@ -138,74 +143,74 @@ else{
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Alamat Tinggal</label>
-                                    <input class="form-control" type="text" name="alamat_tgl" placeholder=" Alamat Tinggal....." readonly>
+                                    <input class="form-control" type="text" name="alamat_tgl" placeholder=" Data Not Exists" readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Kode Lokasi</label>
-                                    <input class="form-control" type="text" name="kd_lokasi"  placeholder=" Kode Lokasi..... "  readonly>
+                                    <input class="form-control" type="text" name="kd_lokasi"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Kode Pos</label>
-                                    <input class="form-control" type="text" name="kode_pos"  placeholder=" Kode Pos..... "  readonly>
+                                    <input class="form-control" type="text" name="kode_pos"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No Telepon</label>
-                                    <input class="form-control" type="text" name="no_telp"  placeholder=" No Telepon..... " readonly>
+                                    <input class="form-control" type="text" name="no_telp"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No NIK</label>
-                                    <input class="form-control" type="text" name="no_nik"  placeholder=" No NIK..... " readonly>
+                                    <input class="form-control" type="text" name="no_nik"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No KK</label>
-                                    <input class="form-control" type="text" name="no_kk"  placeholder=" No KK..... " readonly>
+                                    <input class="form-control" type="text" name="no_kk"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">No BPJS</label>
-                                    <input class="form-control" type="text" name="no_bpjs"  placeholder=" No BPJS..... " readonly>
+                                    <input class="form-control" type="text" name="no_bpjs"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">User Id</label>
-                                    <input class="form-control" type="text" name="user_id"  placeholder=" User Id..... " readonly>
+                                    <input class="form-control" type="text" name="user_id"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Bln Proses</label>
-                                    <input class="form-control" type="text" name="bln_proses"  placeholder=" Bln Proses..... "  readonly>
+                                    <input class="form-control" type="text" name="bln_proses"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Tinggal</label>
-                                    <input class="form-control" type="text" name="tanggal"  placeholder=" Tinggal....." readonly>
+                                    <input class="form-control" type="text" name="tanggal"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Keterangan</label>
-                                    <input class="form-control" type="text" name="ket"  placeholder=" Keterangan..... " readonly>
+                                    <input class="form-control" type="text" name="ket"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">TANGGAL PEN</label>
-                                    <input class="form-control" type="text" name="tglpen"  placeholder=" Tanggal Pensiun..... " readonly>
+                                    <label class="control-label">Tanggal Pensiun</label>
+                                    <input class="form-control" type="text" name="tglpen"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">NO SK PEN</label>
-                                    <input class="form-control" type="text" name="noskpen"  placeholder=" NO SK Pensiun..... " readonly>
+                                    <label class="control-label">No SK Pensiun</label>
+                                    <input class="form-control" type="text" name="noskpen"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">TANGGAL SK PEN</label>
-                                    <input class="form-control" type="text" name="tglskpen"  placeholder=" Tanggal SK Pensiun..... "  readonly>
+                                    <label class="control-label">Tanggal SK Pensiun</label>
+                                    <input class="form-control" type="text" name="tglskpen"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">JENIS PEN</label>
-                                    <input class="form-control" type="text" name="jns_pen"  placeholder=" Jenis Pensiun..... " readonly>
+                                    <label class="control-label">Jenis Pensiun</label>
+                                    <input class="form-control" type="text" name="jns_pen"  placeholder=" Data Not Exists " readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">STAT REC</label>
-                                    <input class="form-control" type="text" name="stat_rec"  placeholder="STAT REC..... "  readonly>
+                                    <input class="form-control" type="text" name="stat_rec"  placeholder=" Data Not Exists "  readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Tanggal Input</label>
-                                    <input class="form-control" type="date" name="tgl_lhr"  placeholder=" Tanggal Input..... " readonly>
+                                    <input class="form-control" type="date" name="tgl"  placeholder=" Data Not Exists " readonly required>
                                 </div>
-                                <div class="tile-footer" >
-                                    <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#ModalEdit"><i class="fa fa-pencil" ></i>Edit  </button>
+                                <div class="tile-footer">
+                                    <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#ModalEdit"><i class="fa fa-pencil" ></i>Edit  </button>
                                 </div>
                             </div>
                         </div>
@@ -220,192 +225,6 @@ else{
             <!-- footer area end-->
         </footer>
         
-
-        <!-- Modal Input -->
-        <div id="ModalAdd" class="modal fade" role="dialog" >
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Input Data SDM 01</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <?php $attributes = array('id' => 'regForm'); 
-                        echo form_open('',$attributes);?>
-                    <form>
-                        <div class="form-group">
-                            <label class="control-label">NPP</label>
-                            <input class="form-control" type="number" name="npp1" id="npp1" placeholder="Masukan NPP" pattern="[A-Za-z\s]{1,50}" title="Harus Menggunakan Huruf 1-50 Karakter" autocomplate="off" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="nama1" id="nama1"  placeholder="Masukan Nama Lengkap" pattern="(?=.*[A-Z])[a-z\s]{1,50}" title="Harus Menggunakan Huruf 1-50 Karakter"  required>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Nama Panggilan</label>
-                            <input class="form-control" type="text" name="nm_pgl1" id="nm_pgl1" placeholder="Masukan Nama Panggilan" >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Gelar Depan </label>
-                            <input class="form-control" type="text"  name="glr_dpn1"id="glr_dpn1" placeholder="Masukan Gelar Depan" >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Gelar Belakang </label>
-                            <input class="form-control" type="text"  name="glr_blk1"id="glr_blk1" placeholder="Masukan Gelar Belakang" >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Kota Lahir</label>
-                            <input class="form-control" type="text"  name="kota_lhr1" id="kota_lhr1" placeholder="Masukan Nama Kota Lahir" >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Provinsi Lahir</label>
-                            <input class="form-control" type="text"  name="prov_lhr1" id="prov_lhr1" placeholder="Masukan Nama Provinsi Lahir ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Negara Lahir</label>
-                            <input class="form-control" type="text"  name="ngr_lhr1" id="ngr_lhr1" placeholder="Masukan Nama Negara Lahir ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Tanggal Lahir</label>
-                            <input class="form-control" type="date" name="tgl_lhr1" id="tgl_lhr1" placeholder="Masukan Tanggal Lahir ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Jenis Kelamin</label>
-                            <select class="form-control" name="j_kelamin1" id="j_kelamin1">
-                                <option value="">Pilih Jenis Kelamin</option>
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Golongan Darah</label>
-                            <select class="form-control" name="gol_darah1" id="gol_darah1">
-                                <option value="">Pilih Golongan Darah</option>
-                                <option value="O">O</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="AB">AB</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Agama</label>
-                            <select class="form-control" name="agama1" id="agama1">
-                                <option value="">Pilih Agama</option>
-                                <option value="I">ISLAM</option>
-                                <option value="P">PROTESTAN</option>
-                                <option value="K">KATOLIK</option>
-                                <option value="H">HINDU</option>
-                                <option value="B">BUDHA</option>
-                                <option value="L">LAIN-LAIN</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Tanggal Masuk</label>
-                            <input class="form-control" type="date"  name="tgl_masuk1" id="tgl_masuk1" placeholder="Masukan Tanggal Masuk ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Status Sipil</label>
-                            <select class="form-control" name="st_sipil1" id="st_sipil1">
-                                <option value="">Pilih Status Sipil</option>
-                                <option value="T">TIDAK KAWIN</option>
-                                <option value="K">KAWIN</option>
-                                <option value="J">JANDA</option>
-                                <option value="D">DUDA</option>
-                                <option value="L">LAIN-LAIN</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Jumlah Anak</label>
-                            <input class="form-control" type="text" name="jmlh_ank1" id="jmlh_ank1" placeholder="Masukan Jumlah Anak ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No Astek</label>
-                            <input class="form-control" type="number" name="no_astek1" id="no_astek1" placeholder="Masukan No Astek " >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No Pensiun</label>
-                            <input class="form-control" type="text" name="no_pens1" id="no_pens1" placeholder="Masukan No Pensiun " >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No NPWP</label>
-                            <input class="form-control" type="text" name="npwp1" id="npwp1" placeholder="Masukan No NPWP " >
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Alamat Tinggal</label>
-                            <textarea class="form-control" rows="3" name="alamat_tgl1" id="alamat_tgl1" placeholder="Masukan Alamat Tinggal" ></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Kode Lokasi</label>
-                            <input class="form-control" type="number" name="kd_lokasi1" id="kd_lokasi1" placeholder="Masukan Kode Lokasi ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Kode Pos</label>
-                            <input class="form-control" type="number" name="kode_pos1" id="kode_pos1" placeholder="Masukan Kode Pos ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No Telepon</label>
-                            <input class="form-control" type="number" name="no_telp1" id="no_telp1" placeholder="Masukan No Telepon ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No NIK</label>
-                            <input class="form-control" type="number" name="no_nik1" id="no_nik1" placeholder="Masukan No NIK ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No KK</label>
-                            <input class="form-control" type="number" name="no_kk1" id="no_kk1" placeholder="Masukan No KK ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No BPJS</label>
-                            <input class="form-control" type="number" name="no_bpjs1" id="no_bpjs1" placeholder="Masukan No BPJS ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">User Id</label>
-                            <input class="form-control" type="text" name="user_id1" id="user_id1" placeholder="Masukan User Id ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Bln Proses</label>
-                            <input class="form-control" type="text" name="bln_proses1" id="bln_proses1" placeholder="Masukan Bln Proses ">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Tinggal</label>
-                            <input class="form-control" type="text" name="tinggal1" id="tinggal1" value="1" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Keterangan</label>
-                            <input class="form-control" type="text" name="ket1" id="ket1" placeholder="Masukan Keterangan">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Tanggal Pensiun</label>
-                            <input class="form-control" type="date" name="tglpen1" id="tglpen1" placeholder="Masukan Tanggal Pensiun">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">NO SK Pensiun</label>
-                            <input class="form-control" type="text" name="noskpen1" id="noskpen1" placeholder="Masukan NO SK Pensiun">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Tanggal SK Pensiun</label>
-                            <input class="form-control" type="date" name="tglskpen1" id="tglskpen1" placeholder="Masukan Tanggal SK Pensiun">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Jenis Pensiun</label>
-                            <input class="form-control" type="text" name="jns_pen1" id="jns_pen1" placeholder="Masukan Jenis Pensiun">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Stat Rec</label>
-                            <input class="form-control" type="text" name="stat_rec1" id="stat_rec1" placeholder="Masukan Stat Rec">
-                        </div>
-                    </form>    
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" id="btn_add" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-                    </div>
-                    <?php echo form_close() ?>
-                </div>
-            </div>
-        </div>
     
         <!-- Modal Edit -->
         <div id="ModalEdit" class="modal fade" role="dialog">
@@ -414,12 +233,10 @@ else{
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Data SDM 01</h4>
+                        <h4 class="modal-title">Edit Data Biodata Diri</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <?php $attributes = array('id' => 'regForm'); 
-                        echo form_open('',$attributes);?>
                         <input type="hidden" name="id_sdm01" id="id_sdm01">
                         <div class="form-group">
                             <label class="control-label">NPP</label>
@@ -600,7 +417,7 @@ else{
                 var npp = $(this).val();
                 $.ajax({
                     type : "POST",
-                    url  : "<?php echo base_url('index.php/Admin/get_npp')?>",
+                    url  : "<?= base_url('index.php/Admin/get_npp') ?>",
                     dataType : "JSON",
                     data : {npp: npp},
                     cache: false,    
@@ -649,6 +466,7 @@ else{
                                     $('[name="jns_pen"]').val(data.jns_pen);
                                     $('[name="stat_rec"]').val(data.stat_rec);
                                     $('[name="tgl"]').val(data.tgl);
+                                    
                                 });
                             
                     }
@@ -657,7 +475,7 @@ else{
             });
         
 
-            //Simpan Barang
+            //Simpan
             $('#btn_add').on('click',function(){
                 var npp         =$('#npp1').val();
                 var nama        =$('#nama1').val();
@@ -745,43 +563,43 @@ else{
                 return false;
             });
 
-            //edit Barang
+            //edit
             $('#btn_edit').on('click',function(){
-                var id_sdm01    =$('#id_sdm01').val();
-                var npp         =$('#npp2').val();
-                var nama        =$('#nama2').val();
-                var nm_pgl      =$('#nm_pgl2').val();
-                var glr_dpn     =$('#glr_dpn2').val();
-                var glr_blk     =$('#glr_blk2').val();
-                var kota_lhr    =$('#kota_lhr2').val();
-                var prov_lhr    =$('#prov_lhr2').val();
-                var ngr_lhr     =$('#ngr_lhr2').val();
-                var tgl_lhr     =$('#tgl_lhr2').val();
-                var j_kelamin   =$('#j_kelamin2').val();
-                var gol_darah   =$('#gol_darah2').val();
-                var agama       =$('#agama2').val();
-                var tgl_masuk   =$('#tgl_masuk2').val();
-                var st_sipil    =$('#st_sipil2').val();
-                var jmlh_ank    =$('#jmlh_ank2').val();
-                var no_astek    =$('#no_astek2').val();
-                var no_pens     =$('#no_pens2').val();
-                var npwp        =$('#npwp2').val();
-                var alamat_tgl  =$('#alamat_tgl2').val();
-                var kd_lokasi   =$('#kd_lokasi2').val();
-                var kode_pos    =$('#kode_pos2').val();
-                var no_telp     =$('#no_telp2').val();
-                var no_nik      =$('#no_nik2').val();
-                var no_kk       =$('#no_kk2').val();
-                var no_bpjs     =$('#no_bpjs2').val();
-                var user_id     =$('#user_id2').val();
-                var bln_proses  =$('#bln_proses2').val();
-                var tinggal     =$('#tinggal2').val();
-                var ket         =$('#ket2').val();
-                var tglpen      =$('#tglpen2').val();
-                var noskpen     =$('#noskpen2').val();
-                var tglskpen    =$('#tglskpen2').val();
-                var jns_pen     =$('#jns_pen2').val();
-                var stat_rec    =$('#stat_rec2').val();
+                var id_sdm01    = $('#id_sdm01').val();
+                var npp         = $('#npp2').val();
+                var nama        = $('#nama2').val();
+                var nm_pgl      = $('#nm_pgl2').val();
+                var glr_dpn     = $('#glr_dpn2').val();
+                var glr_blk     = $('#glr_blk2').val();
+                var kota_lhr    = $('#kota_lhr2').val();
+                var prov_lhr    = $('#prov_lhr2').val();
+                var ngr_lhr     = $('#ngr_lhr2').val();
+                var tgl_lhr     = $('#tgl_lhr2').val();
+                var j_kelamin   = $('#j_kelamin2').val();
+                var gol_darah   = $('#gol_darah2').val();
+                var agama       = $('#agama2').val();
+                var tgl_masuk   = $('#tgl_masuk2').val();
+                var st_sipil    = $('#st_sipil2').val();
+                var jmlh_ank    = $('#jmlh_ank2').val();
+                var no_astek    = $('#no_astek2').val();
+                var no_pens     = $('#no_pens2').val();
+                var npwp        = $('#npwp2').val();
+                var alamat_tgl  = $('#alamat_tgl2').val();
+                var kd_lokasi   = $('#kd_lokasi2').val();
+                var kode_pos    = $('#kode_pos2').val();
+                var no_telp     = $('#no_telp2').val();
+                var no_nik      = $('#no_nik2').val();
+                var no_kk       = $('#no_kk2').val();
+                var no_bpjs     = $('#no_bpjs2').val();
+                var user_id     = $('#user_id2').val();
+                var bln_proses  = $('#bln_proses2').val();
+                var tinggal     = $('#tinggal2').val();
+                var ket         = $('#ket2').val();
+                var tglpen      = $('#tglpen2').val();
+                var noskpen     = $('#noskpen2').val();
+                var tglskpen    = $('#tglskpen2').val();
+                var jns_pen     = $('#jns_pen2').val();
+                var stat_rec    = $('#stat_rec2').val();
                 $.ajax({
                     type : "POST",
                     url  : "<?php echo base_url('index.php/Admin/edit_sdm01')?>",
@@ -836,9 +654,6 @@ else{
         
         });
         </script>
-
-        
-
     </body>
 </html>
 <?php }

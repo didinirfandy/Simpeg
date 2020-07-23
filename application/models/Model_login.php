@@ -20,8 +20,8 @@ class model_login extends CI_Model {
                 $date   =   date("Y/m/d H:i:s");  
                 $data   =   array('tgl_login'=>$date, 'status'=>1);
 
-                $this->db->where(username, $username);
-                $this->db->update(tb_login,$data);
+                $this->db->where('username', $username);
+                $this->db->update('tb_login',$data);
 
                 return $row['level'];
             }
@@ -38,9 +38,9 @@ class model_login extends CI_Model {
 
     function logout($username)
     {
-        $this->db->set(status, 0);
-        $this->db->where(username, $username);
-        $this->db->update(tb_login);
+        $this->db->set('status', 0);
+        $this->db->where('username', $username);
+        $this->db->update('tb_login');
     }
 
     function login_karyawan($username,$password)
@@ -51,6 +51,7 @@ class model_login extends CI_Model {
         {
             $this->session->set_userdata('status_login', $q['nama']);
             $this->session->set_userdata('status_login_username', $q['username']);
+            $this->session->set_userdata('status_id', $q['id']);
             $valid  =   $q['valid'];
         }
         if($valid==1) 
@@ -62,8 +63,8 @@ class model_login extends CI_Model {
                 $date   =   date("Y/m/d H:i:s");  
                 $data   =   array('tgl'=>$date, 'status'=>1);
 
-                $this->db->where(username, $username);
-                $this->db->update(login_karyawan,$data);
+                $this->db->where('username', $username);
+                $this->db->update('login_karyawan',$data);
 
                 return $coba;
             }
@@ -81,9 +82,9 @@ class model_login extends CI_Model {
     function logout_karyawan()
     {
         $username = $this->session->userdata('status_login_username');
-        $this->db->set(status, 0);
-        $this->db->where(username, $username);
-        $this->db->update(login_karyawan);
+        $this->db->set('status', 0);
+        $this->db->where('username', $username);
+        $this->db->update('login_karyawan');
     }
 
     function lg_admin($username,$password)
@@ -92,6 +93,8 @@ class model_login extends CI_Model {
 
         foreach ($coba->result_array() as $q)
         {
+            $this->session->set_userdata('id', $q['id']);
+            $this->session->set_userdata('status_login', $q['nama']);
             $valid  =   $q['valid'];
         }
         if($valid==1) 
@@ -103,8 +106,8 @@ class model_login extends CI_Model {
                 $date   =   date("Y/m/d H:i:s");  
                 $data   =   array('tgl_login'=>$date, 'status'=>1);
 
-                $this->db->where(username, $username);
-                $this->db->update(login_admin,$data);
+                $this->db->where('username', $username);
+                $this->db->update('login_admin',$data);
 
                 return $data;
             }
@@ -121,9 +124,9 @@ class model_login extends CI_Model {
 
     function logout_admin($username)
     {
-        $this->db->set(status, 0);
-        $this->db->where(username, $username);
-        $this->db->update(login_admin);
+        $this->db->set('status', 0);
+        $this->db->where('username', $username);
+        $this->db->update('login_admin');
     }
 
     function lg_super_admin($username,$password)
@@ -143,8 +146,8 @@ class model_login extends CI_Model {
                 $date   =   date("Y/m/d H:i:s");  
                 $data   =   array('tgl_login'=>$date, 'status'=>1);
 
-                $this->db->where(username, $username);
-                $this->db->update(login_super_admin,$data);
+                $this->db->where('username', $username);
+                $this->db->update('login_super_admin',$data);
 
                 return $data;
             }
@@ -161,9 +164,9 @@ class model_login extends CI_Model {
 
     function logout_super_admin($username)
     {
-        $this->db->set(status, 0);
-        $this->db->where(username, $username);
-        $this->db->update(login_super_admin);
+        $this->db->set('status', 0);
+        $this->db->where('username', $username);
+        $this->db->update('login_super_admin');
     }
 }
 

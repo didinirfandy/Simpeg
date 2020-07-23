@@ -1,5 +1,9 @@
         <!-- Sidebar toggle button-->
         <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Menampilkan Waktu -->
+        <div class="app-nav__item col-md-3">
+                <span style="color:white" id="dates"><span id="the-day"></span> <span id="the-time"></span> </span>
+        </div>
         <!-- Navbar Right Menu-->
         <ul class="app-nav">
                 <li class="app-search">

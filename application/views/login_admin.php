@@ -1,104 +1,89 @@
-<?php echo form_open('Core/lg_admin');
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<title>SDM PTPN VIII</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--========================================================================================================================================-->	
-	<link rel="icon" type="image/png" href="<?php echo base_url();?>assets_login/images/icons/favicon.ico"/>
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/bootstrap/css/bootstrap.min.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/animate/animate.css">
-<!--========================================================================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/css-hamburgers/hamburgers.min.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/animsition/css/animsition.min.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/select2/select2.min.css">
-<!--========================================================================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/vendor/daterangepicker/daterangepicker.css">
-<!--========================================================================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets_login/css/main.css">
-<!--========================================================================================================================================-->
+	<?php
+	$data['tittle'] = "Login Admin";
+	$this->load->view('template/head', $data);
+	?>
 </head>
+
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('<?php echo base_url();?>assets_login/images/PTPN.png');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-
-					<span class="login100-form-title p-b-20 p-t-20">
-						<img src="<?php echo base_url();?>assets_login/images/PTPN6.jpg" alt="PTPN" width="300px"/>
-					</span>
-					<span class="login100-form-title p-b-20 p-t-20">
-						Log in Admin
-					</span>
-					
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username" autocomplete="off" required>
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="password" pattern=".{6}" title="Harus 6 Karakter, Tidak Boleh Lebih" placeholder="Password" required>
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
-
-					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" name="submit">
-							Login
-						</button>
-					</div>
-
-					<div class="text-center p-t-20">
-						<font color="#02FE0B" size="2">
-							<?php echo 	
-										$this->session->userdata('notif');
-										$this->session->sess_destroy(); 
-							?>
-						</font>
-					</div>
-				</form>
+	<section class="material-half-bg">
+		<div class="cover">
+			<div class="app-nav__item col-md-3">
+				<span style="color:white" id="dates"><span id="the-day"></span> <span id="the-time"></span> </span>
 			</div>
 		</div>
-	</div>
-	
+	</section>
 
-	<div id="dropDownSelect1"></div>
-	
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/animsition/js/animsition.min.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/bootstrap/js/popper.js"></script>
-	<script src="<?php echo base_url();?>assets_login/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/select2/select2.min.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/daterangepicker/moment.min.js"></script>
-	<script src="<?php echo base_url();?>assets_login/vendor/daterangepicker/daterangepicker.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/vendor/countdowntime/countdowntime.js"></script>
-<!--====================================================================================================-->
-	<script src="<?php echo base_url();?>assets_login/js/main.js"></script>
+	<section class="login-content">
+		<div class="logo">
+			<!-- <span class="login100-form-title p-b-20 p-t-20">
+				<img src="<?php echo base_url(); ?>assets_login/images/PTPN6.jpg" alt="PTPN" width="300px" />
+			</span> -->
+			<center>
+				<h1>SIMPEG</h1>
+				<h3>Sistem Informasi Management Kepegawaian</h3>
+			</center>
+		</div>
+		<div class="login-box">
+			<form class="login-form" method="POST" action="<?= base_url('index.php/Core/lg_admin'); ?>">
+				<h3 class="login-head"><i class="fa fa-lg fa-fw fa-user-secret"></i>SIGN IN ADMIN</h3>
+				<div class="form-group">
+					<label class="control-label">USERNAME ADMIN</label>
+					<input class="form-control" type="text" name="username" placeholder="Username" autocomplete="off" title="Masukan Username, Tidak Boleh Kosong!!!" required autofocus>
+				</div>
+				<div class="form-group">
+					<label class="control-label">PASSWORD ADMIN</label>
+					<input class="form-control" type="password" name="password" pattern=".{6}" title="Harus 6 Karakter, Tidak Boleh Lebih" placeholder="Password" required>
+				</div>
+				<div class="form-group">
+					<div class="utility">
+						<div class="animated-checkbox">
+							<label>
+								<input type="checkbox"><span class="label-text">Stay Signed in</span>
+							</label>
+						</div>
+						<!-- <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></!-->
+					</div>
+				</div>
+				<div class="form-group btn-container">
+					<button class="btn btn-primary btn-block" name="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+				</div><br><br>
+				<?= $this->session->flashdata('pesan'); ?>
+				<?=
+					$this->session->userdata('notif');
+				$this->session->sess_destroy();
+				?>
+			</form>
+			<form class="forget-form" method="POST" action="<?= base_url('index.php/Core/lg_admin'); ?>">
+				<h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
+				<div class="form-group">
+					<label class="control-label">EMAIL</label>
+					<input class="form-control" type="text" placeholder="Email">
+				</div>
+				<div class="form-group btn-container">
+					<button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+				</div>
+				<div class="form-group mt-3">
+					<p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Back to Login</a></p>
+				</div>
+			</form>
+		</div>
+	</section>
 
+	<?php $this->load->view('template/script') ?>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Login Page Flipbox control
+			$('.login-content [data-toggle="flip"]').click(function() {
+				$('.login-box').toggleClass('flipped');
+				return false;
+			});
+		});
+	</script>
 </body>
+
 </html>

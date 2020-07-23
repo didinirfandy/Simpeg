@@ -170,14 +170,14 @@ sup {
 }
 
 a {
-  color: #009688;
+  color: #004196;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #004a43;
+  color: #00294a;
   text-decoration: underline;
 }
 
@@ -1679,12 +1679,13 @@ pre code {
 .table th,
 .table td {
   padding: 0.75rem;
-  vertical-align: top;
+  vertical-align: inherit;
   border-top: 1px solid #dee2e6;
 }
 
 .table thead th {
-  vertical-align: bottom;
+  vertical-align: top;
+  text-align: center;
   border-bottom: 2px solid #dee2e6;
 }
 
@@ -4959,7 +4960,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #009688;
+  color: #029cc7;
   background-color: #FFF;
   border: 1px solid #dee2e6;
 }
@@ -4997,8 +4998,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 1;
   color: #FFF;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #029cc7;
+  border-color: #029cc7;
 }
 
 .page-item.disabled .page-link {
@@ -9555,7 +9556,7 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
 table.dataTable thead > tr > td.sorting_asc,
 table.dataTable thead > tr > td.sorting_desc,
 table.dataTable thead > tr > td.sorting {
-  padding-right: 150px;
+  padding-right: 30px;
 }
 
 table.dataTable thead > tr > th:active,
@@ -10295,7 +10296,7 @@ fieldset[disabled] .datepicker table tr td.selected.highlighted.focus {
 .datepicker table tr td.active.highlighted:hover {
   color: #ffffff;
   background-color: #009688;
-  border-color: #007d71;
+  border-color: #029cc7;
 }
 
 .datepicker table tr td.active:active,
@@ -10306,7 +10307,7 @@ fieldset[disabled] .datepicker table tr td.selected.highlighted.focus {
 .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
   color: #ffffff;
   background-color: #009688;
-  border-color: #007d71;
+  border-color: #029cc7;
 }
 
 .datepicker table tr td.active:active:hover,
@@ -10328,7 +10329,7 @@ fieldset[disabled] .datepicker table tr td.selected.highlighted.focus {
 .open > .dropdown-toggle.datepicker table tr td.active.focus,
 .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
   color: #ffffff;
-  background-color: #007d71;
+  background-color: #029cc7;
   border-color: #193c5a;
 }
 
@@ -10414,7 +10415,7 @@ fieldset[disabled] .datepicker table tr td.active.highlighted.focus {
 .datepicker table tr td span.active.disabled:hover:hover {
   color: #ffffff;
   background-color: #009688;
-  border-color: #007d71;
+  border-color: #029cc7;
 }
 
 .datepicker table tr td span.active:active,
@@ -10431,7 +10432,7 @@ fieldset[disabled] .datepicker table tr td.active.highlighted.focus {
 .open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
   color: #ffffff;
   background-color: #009688;
-  border-color: #007d71;
+  border-color: #029cc7;
 }
 
 .datepicker table tr td span.active:active:hover,
@@ -10471,7 +10472,7 @@ fieldset[disabled] .datepicker table tr td.active.highlighted.focus {
 .open > .dropdown-toggle.datepicker table tr td span.active.disabled.focus,
 .open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover.focus {
   color: #ffffff;
-  background-color: #007d71;
+  background-color: #029cc7;
   border-color: #193c5a;
 }
 
@@ -13451,12 +13452,12 @@ be a descendant of the grid when it is being dragged.
 
 ::-moz-selection {
   color: #FFF;
-  background-color: #00635a;
+  background-color: #004196;
 }
 
 ::selection {
   color: #FFF;
-  background-color: #00635a;
+  background-color: #004196;
 }
 
 @media (min-width: 768px) {
@@ -13552,7 +13553,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #009688;
+  background-color: #029cc7;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13575,7 +13576,7 @@ be a descendant of the grid when it is being dragged.
           flex: 1 0 auto;
   color: #fff;
   text-align: center;
-  font-family: 'Niconne';
+  font-family: "monospace";
   padding: 0 15px;
   font-size: 26px;
   font-weight: 400;
@@ -13589,7 +13590,7 @@ be a descendant of the grid when it is being dragged.
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #007d71;
+    background-color: #029cc7;
   }
 }
 
@@ -13623,7 +13624,7 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   color: #fff;
-  background-color: #00635a;
+  background-color: #024b9e;
   text-decoration: none;
 }
 
@@ -13782,11 +13783,11 @@ be a descendant of the grid when it is being dragged.
   top: 0;
   bottom: 0;
   left: 0;
-  padding-top: 70px;
+  padding-top: 60px;
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #222d32;
+  background-color: #0d252f;
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease,
@@ -14103,7 +14104,7 @@ be a descendant of the grid when it is being dragged.
           flex-direction: row;
   background-color: #FFF;
   margin: -30px -30px 30px;
-  padding: 30px 30px;
+  padding: 25px 30px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -14320,7 +14321,7 @@ be a descendant of the grid when it is being dragged.
 .animated-radio-button input[type="radio"] + .label-text:before {
   content: "";
   font-family: "FontAwesome";
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -14527,7 +14528,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #009688;
+  background-color: #029cc7;
   height: 50vh;
 }
 
@@ -14887,7 +14888,7 @@ be a descendant of the grid when it is being dragged.
 
 .login-content .logo {
   margin-bottom: 40px;
-  font-family: "Niconne";
+  font-family: "monospace";
   color: #fff;
 }
 
@@ -15130,6 +15131,36 @@ be a descendant of the grid when it is being dragged.
 }
 
 .user .profile .info img {
+  border-radius: 50%;
+  max-width: 110px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.user1 .profile1 {
+  margin: 10px -30px 0 -30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user1 .profile1 .info {
+  padding: 20px 50px;
+  text-align: center;
+  background-color: #fff;
+  white-space: nowrap;
+  background-color: #2b2a2a;
+  color: #fff;
+}
+
+.user1 .profile1 .info img {
+  border-radius: 50%;
+  max-width: 110px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.user1 .profile1 .info img {
   border-radius: 50%;
   max-width: 110px;
   margin-bottom: 20px;
